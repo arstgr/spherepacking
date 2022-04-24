@@ -12,8 +12,15 @@ To start, simply use the make file
 * GCC
 
 * GLPK [GNU Linear Programming Kit](https://www.gnu.org/software/glpk/)
-  ```sh
-  npm install npm@latest -g
+  ```
+	wget https://ftp.gnu.org/gnu/glpk/glpk-5.0.tar.gz
+	tar -xzvf glpk-5.0.tar.gz
+	cd glpk-5.0
+	mkdir build
+	cd build
+	./configure --prefix=/path/to/glpk-5.0/
+	make
+	make install
   ```
 
 ### Installation
