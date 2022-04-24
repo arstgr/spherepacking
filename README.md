@@ -11,7 +11,7 @@ To start, simply use the make file
 
 * GCC
 
-* GLPK [https://www.gnu.org/software/glpk/](GNU Linear Programming Kit)
+* GLPK [GNU Linear Programming Kit](https://www.gnu.org/software/glpk/)
   ```sh
   npm install npm@latest -g
   ```
