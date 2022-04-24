@@ -11,7 +11,7 @@ To start, simply use the make file
 
 * GCC
 
-* GLPK
+* GLPK [https://www.gnu.org/software/glpk/](GNU Linear Programming Kit)
   ```sh
   npm install npm@latest -g
   ```
@@ -58,7 +58,7 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 <!-- LICENSE -->
 ## License
 
-Distributed under the AGPL-3.0 License. See `LICENSE.txt` for more information.
+Distributed under the AGPL-3.0 License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
