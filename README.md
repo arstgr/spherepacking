@@ -1,80 +1,59 @@
-# Sphere Packing
-Random Sphere Packing Simulation in Box and Cylinders
+# Random Sphere Packing Simulation
 
+This program simulates a random sphere packing in a cylinder using the Monte Carlo method. The spheres can have two ranges of sizes (with random distributions around the mean) and are randomly packed in the cylinder. The program utilizes GNU's GLPK library to identify the caged spheres, which are a subset of spheres that are confined between other ones and can move within their cage.
+![](figs/cagedparticles.png)
 
-<!-- GETTING STARTED -->
-## Getting Started
+The packing simulation algorithm was developed as part of my MSc thesis at [Isfahan University of Technology](http://english.iut.ac.ir/Department-of-Mechanical-Engineering). The jammed particle identification algorithm has been implemented using the method proposed by [Donev, A., Torquato, S., Stillinger, F.H. and Connelly, R. (2004) JCP 197(1)](https://doi.org/10.1016/j.jcp.2003.11.022).
 
-To start, simply use the make file
+The results from this program were intended for use in a flow solver to simulate fluid flows through packed beds. The flow solvers for the simulation of gaseous mixtures through these packed beds remain unpublished (for the time being), but can be obtained via contacting with me. 
+![](figs/flouidizedbed.png)"Lattice Boltzmann simulation of creeping flow through a packed bed, flow visualization using [paraview](https://www.paraview.org/), image obtained from Rastegari, S.A., 2009. Simulation of Gaseous Mixture Flows in a packed bed of unfixed particles, MSc thesis, Isfahan University of Technology"
 
-### Prerequisites
+## Program Input
 
-* GCC
+The program expects the input to be provided in the file `info.packing`. This file contains various lines that specify the parameters and settings for the random sphere packing simulation. Each line in the file is accompanied by an explanation to help understand its purpose and usage.
 
-* GLPK [GNU Linear Programming Kit](https://www.gnu.org/software/glpk/)
-  ```
-	wget https://ftp.gnu.org/gnu/glpk/glpk-5.0.tar.gz
-	tar -xzvf glpk-5.0.tar.gz
-	cd glpk-5.0
-	mkdir build
-	cd build
-	./configure --prefix=/path/to/glpk-5.0/
-	make
-	make install
-  ```
+## Program Outputs
+The program outputs the locations of the sphere centers, their diameters, and marks the caged spheres. 
 
-### Installation
+## Citation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+If you use the results obtained from this program in your research or work, please cite the following reference:
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+Rastegari, S.A., 2009. Simulation of Gaseous Mixture Flows in a packed bed of unfixed particles, MSc thesis, Isfahan University of Technology.
 
+## Dependencies
 
+The program relies on the GNU GLPK library for identifying caged spheres. Ensure that you have the GLPK library installed on your system before running the program.
 
-<!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+To compile and run the program, follow the steps below:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+1. Make sure you have the GLPK library installed on your system.
+2. Set the path to GLPK directory (GLPK_DIR) at the beginning of the Makefile 
+3. Compile the program using the provided Makefile. Run the following command:
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+```
+make
+```
 
-<!-- ROADMAP -->
-## Roadmap
+4. Once the compilation is successful, execute the program with the following command:
 
-- [ ] Free sphere detection is still incomplete, support for this feature is to be added in the future
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+```
+./packing
+```
 
 
-<!-- LICENSE -->
+The program will perform the random sphere packing simulation according to the parameters specified in the `info.packing` file. The results will be displayed on the console and saved to an output file.
+
+## Verification
+The program has gone through some verification studies an example of which is found in the "verification" directory of this repo. 
+
+## Author
+
+This program was developed by Amirreza Rastegari. For questions or inquiries, please contact him at [arstgri@gmail.com](mailto:arstgri@gmail.com).
+
 ## License
 
-Distributed under the AGPL-3.0 License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-## Contact
-
-Amirreza - amirreza at umich dot edu
-
-Project Link: [https://github.com/arstgr/spherepacking](https://github.com/arstgr/spherepacking)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+This program is licensed under the MIT License. Refer to the [LICENSE](LICENSE) file for more information.
 

@@ -1,0 +1,50 @@
+ *******************************************************************************************************
+ *                                  Input Data for packing simulation                                  *
+ * Simulation is performed in a cylindrical container, with pre specified values of diameter and       *
+ * height. Spheres are of two different ranges of diameters, for which the mixture percentage, mean    *
+ * deviation value of diameters and Min of them are read from this file!                               *
+ * outputs of this program are: 1- a VTK file: "sphere.vtk" 2- Coordinate file: "C.packing" in which   *
+ * the spatial coordinates of spheres are saved 3- diameter file: "d.packing" containing the diameters *
+ * for each sphere and 4- moving particle indices: "k.packing". The inputs all are read from           *
+ * this file, as follows:                                                                              *
+ *******************************************************************************************************
+
+
+   J = 100.0                         Percentage of sphere types in the container, This should be a double value between 0-100, 
+                                     Do not try other values! this is just a code, NOT A SOFTWARE 
+
+   Diamdev1 = 0.0                    Mean Deviation of diameter for spheres of type 1, this should be a double 
+   Diamdev2 = 0.0                    Mean Deviation of diameter for spheres of type 2, this should be also a double 
+
+   D1 = 20.0                         Min value for the diamters of spheres of type 1, a double value 
+   D2 = 0.0                          Min value for the diamters of spheres of type 2, a double value 
+
+                                      NOTE: type 1 must always be the bigger, i.e. The bigger most sphere should be of this type 
+
+   Side of Box = 50.0                 I think this does not need to be explained !
+
+   Height of Box = 74.0               This is clear too 
+
+   Contact search distance = 10.0     Caging detection algorithm should construct a contact matrix, for which it must consider all 
+                                      possible contacts with neighbours. This value deffines the neighbouring spheres that are 
+                                      considered in this search. Choose this value nearly equal to D1.
+   
+   Max displacement = 0.10            Maximum displacement above it, a sphere is considered free
+
+   Delta Min = 0.01                   This is the minimum value of displacements for two adjacent spheres. Spheres nearer than this, 
+                                      are considered in contact         
+   Delta Max = 20.0                   This is a typical value, used in simple method as upper bound for the displacements. Choose it as a big number
+
+   
+   ***************************************************************************************************
+   *                       Tuning parameters for Monte Carlo Iterations                              *
+   *                                                                                                 *
+   *              Change them carefully, the algorithm is very sensitive to these values             *
+   ***************************************************************************************************
+
+   Inner Loop Iterations = 100                  This must be an integer
+   Outer Loop Iterations = 100                    An integer, too.
+   Temperature           = 100000000.0            This is an adjustable variable, acting like the Temperature
+                                                 in simulations, its value should not be so low.
+   Temperature divider = 1.0                     Temperature is devided by this factor at each iteration of outer most loop (a double)
+
