@@ -51,9 +51,9 @@ The program has gone through some verification studies an example of which is fo
 
 ## Author
 
-This program was developed by Amirreza Rastegari. For questions or inquiries, please contact him at [arstgri@gmail.com](mailto:arstgri@gmail.com).
+This program was developed by Amirreza Rastegari. For questions or inquiries, please contact him at "arstgri at gmail dot com".
 
 ## License
 
-This program is licensed under the MIT License. Refer to the [LICENSE](LICENSE) file for more information.
+This program is licensed under the GNU Affero general public License. Refer to the [LICENSE](LICENSE) file for more information.
 
